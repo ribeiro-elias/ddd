@@ -1,4 +1,4 @@
-package com.food.ordering.domain.valueobject;
+package com.food.ordering.system.domain.valueobject;
 
 import java.util.Objects;
 

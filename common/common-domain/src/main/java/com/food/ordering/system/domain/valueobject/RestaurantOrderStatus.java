@@ -1,2 +1,5 @@
-package com.food.ordering.system.domain.valueobject;public class RestaurantOrderStatus {
+package com.food.ordering.system.domain.valueobject;
+
+public enum RestaurantOrderStatus {
+    PAID
 }

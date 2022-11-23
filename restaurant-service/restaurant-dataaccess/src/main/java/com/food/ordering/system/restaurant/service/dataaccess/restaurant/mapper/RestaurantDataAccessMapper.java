@@ -33,7 +33,7 @@ public class RestaurantDataAccessMapper {
                         new RestaurantDataAccessException("No restaurants found!"));
 
         List<Product> restaurantProducts = restaurantEntities.stream().map(entity ->
-                        Product.builder()
+                        Product.Builder.builder()
                                 .productId(new ProductId(entity.getProductId()))
                                 .name(entity.getProductName())
                                 .price(new Money(entity.getProductPrice()))
@@ -41,9 +41,9 @@ public class RestaurantDataAccessMapper {
                                 .build())
                 .collect(Collectors.toList());
 
-        return Restaurant.builder()
+        return Restaurant.Builder.builder()
                 .restaurantId(new RestaurantId(restaurantEntity.getRestaurantId()))
-                .orderDetail(OrderDetail.builder()
+                .orderDetail(OrderDetail.Builder.builder()
                         .products(restaurantProducts)
                         .build())
                 .active(restaurantEntity.getRestaurantActive())
@@ -60,7 +60,7 @@ public class RestaurantDataAccessMapper {
     }
 
     public OrderApproval orderApprovalEntityToOrderApproval(OrderApprovalEntity orderApprovalEntity) {
-        return OrderApproval.builder()
+        return OrderApproval.Builder.builder()
                 .orderApprovalId(new OrderApprovalId(orderApprovalEntity.getId()))
                 .restaurantId(new RestaurantId(orderApprovalEntity.getRestaurantId()))
                 .orderId(new OrderId(orderApprovalEntity.getOrderId()))
